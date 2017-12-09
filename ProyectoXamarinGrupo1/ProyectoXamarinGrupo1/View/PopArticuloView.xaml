@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoXamarinGrupo1.View.PopArticuloView">
+    <StackLayout>
+        <!--Login Panel-->
+        <!--<StackLayout VerticalOptions="Start" BackgroundColor="LightSkyBlue">
+            <Label Text="CONSULTA DE ARTICULOS"
+                   Font="36"
+                   TextColor="Black"
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold"/>
+            <StackLayout Orientation="Horizontal"
+                         HeightRequest="1"
+                         BackgroundColor="Black">
+            </StackLayout>
+        </StackLayout>-->
+        <!--Logo Image-->
+        <!--<Image Source="articulo.png" Margin="0,10"/>-->
+        <!--Frame-->
+        <Frame CornerRadius="10" Margin="20">
+            <StackLayout>
+                <StackLayout  Orientation="Horizontal">
+                    <Picker x:Name="pckFamilia"
+             Title ="Familias"
+             HorizontalOptions="FillAndExpand"
+             BackgroundColor="#48D1CC"/>
+                </StackLayout>
+                <StackLayout  Orientation="Horizontal">
+                    <Entry x:Name="txtArticulo"
+             TextColor="Black"
+             Placeholder="Código o Descripcion"
+             HorizontalOptions="FillAndExpand"
+             BackgroundColor="#48D1CC"/>
+                    <Button x:Name ="btnSelecciona"
+             Text="✔"
+             TextColor="Black"
+             BackgroundColor="#33ff4b"
+             WidthRequest="50"
+             BorderRadius="10"
+             HorizontalOptions="End"/>
+                </StackLayout>
+                <StackLayout  Orientation="Horizontal"
+                  HeightRequest="1"
+                  WidthRequest="320"
+                  BackgroundColor="Black">
+                </StackLayout>
+                <ListView x:Name="listView" ItemsSource="{Binding lstArticulos}" BackgroundColor="#48D1CC" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell
+            Text="{Binding Articulo}"
+            TextColor="White"
+            Detail="{Binding Descripcion}"
+            DetailColor="Black"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <StackLayout  Orientation="Horizontal">
+                    <Label Text="Pre.Sugerido"
+             Font="18"
+             TextColor="Black"
+             HorizontalOptions="StartAndExpand"
+             FontAttributes="Bold"/>
+                    <Label Text="I.V"
+             Font="18"
+             TextColor="Black"
+             HorizontalOptions="CenterAndExpand"
+             FontAttributes="Bold"/>
+                    <Label Text="Pre.Venta"
+             Font="18"
+             TextColor="Black"
+             HorizontalOptions="EndAndExpand"
+             FontAttributes="Bold"/>
+                </StackLayout>
+                <StackLayout  Orientation="Horizontal">
+                    <Label x:Name="lblPreSuger"
+             Text="        0.00"
+             Font="18"
+             TextColor="Black"
+             XAlign="End"
+             HorizontalOptions="StartAndExpand"
+             FontAttributes="Bold"
+             BackgroundColor="#48D1CC"/>
+                    <Label x:Name="lblIv"
+             Text="   "
+             Font="18"
+             TextColor="Black"
+             HorizontalOptions="CenterAndExpand"
+             FontAttributes="Bold"
+             BackgroundColor="#48D1CC"/>
+                    <Label x:Name="lblPreVenta"
+             Text="     0.00"
+             Font="18"
+             TextColor="Black"
+              XAlign="End"
+             HorizontalOptions="EndAndExpand"
+             FontAttributes="Bold"
+             BackgroundColor="#48D1CC"/>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>

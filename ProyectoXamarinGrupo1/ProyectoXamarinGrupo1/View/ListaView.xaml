@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoXamarinGrupo1.View.ListaView"
+             BackgroundColor="LightBlue">
+    <ContentPage.Content>
+        <StackLayout>
+            <!--Lista con los articulos de la orden-->
+            <ListView x:Name="lstArticulos" BackgroundColor="Gray" Margin="30">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Codigo" HorizontalOptions="Start" VerticalOptions="Center" BackgroundColor="White"/>
+                                <Label Text="Articulo" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="White"/>
+                                <Label Text="Cantidad" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="White"/>
+                                <Label Text="Descripcion" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="White"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

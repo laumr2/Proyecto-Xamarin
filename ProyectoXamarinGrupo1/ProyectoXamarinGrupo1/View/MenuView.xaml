@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoXamarinGrupo1.View.MenuView"
+             BackgroundColor="White"
+             Title="Master">
+    <StackLayout>
+        <ListView x:Name="lstMenuView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Button BackgroundColor="Aqua" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="28" WidthRequest="28" BorderRadius="50"/>
+                            <Label Text="Usuario" TextColor="Black" HorizontalOptions="EndAndExpand" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

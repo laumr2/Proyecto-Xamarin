@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoXamarinGrupo1.View.FormularioView"
+             BackgroundColor="LightBlue">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand">
+            <!--Fecha-->
+            <Label Text="Fecha: 03/12/2017"
+                   HorizontalOptions="CenterAndExpand"
+                   FontSize="20"/>
+            <!--Cliente-->
+            <Entry Text=""
+                   TextColor="Black"
+                   Placeholder="Digite el nombre del cliente"
+                   PlaceholderColor="Black"
+                   BackgroundColor="#84CDCA"/>
+            <!--Cantidad-Articulo-Descripcion-->
+            <StackLayout Orientation="Horizontal">
+                <Entry Text=""
+                   TextColor="Black"
+                   Placeholder="Cant."
+                   PlaceholderColor="Black"
+                   BackgroundColor="#84CDCA"
+                   HorizontalOptions="Start"
+                   WidthRequest="100"/>
+                <Entry Text=""
+                   x:Name="txtArticulo"
+                   TextColor="Black"
+                   Placeholder="Articulo"
+                   PlaceholderColor="Black"
+                   BackgroundColor="#84CDCA"
+                   HorizontalOptions="Start"
+                   WidthRequest="200"/>
+                <Entry Text="7UP 350 m.l"
+                   TextColor="Black"
+                   Placeholder="Descripcion del articulo"
+                   PlaceholderColor="Black"
+                   BackgroundColor="#84CDCA"
+                       HorizontalOptions="StartAndExpand"/>
+            </StackLayout>
+            <!--Gravado-Observaciones-BotonAgregarLinea--> 
+            <StackLayout Orientation="Horizontal">
+                <Label Text=" * "
+                       TextColor="Black"
+                       BackgroundColor="#84CDCA"
+                       HorizontalOptions="Start"/>
+                <Entry Text=""
+                       TextColor="Black"
+                       Placeholder="Observaciones"
+                       PlaceholderColor="Black"
+                       BackgroundColor="#84CDCA"
+                       HorizontalOptions="CenterAndExpand"/>
+                <Button Text="+"
+                        BorderRadius="100"
+                        HeightRequest="40"
+                        WidthRequest="40"
+                        HorizontalOptions="End"
+                        BackgroundColor="Yellow"
+                        Margin="20,0"/>
+            </StackLayout>
+            <!--LineasAgregadas-->
+            <ListView x:Name="lstOrden" BackgroundColor="Gray">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Nombre" HorizontalOptions="Start" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <!--BotonSalir-BotonCancelar-BotonGuardar-->
+            <StackLayout Orientation="Horizontal">
+                <Button BorderRadius="10"
+                        Text="SALIR"
+                        BackgroundColor="Gray"
+                        HorizontalOptions="StartAndExpand"
+                        Margin="20,0"/>
+                <Button BorderRadius="10"
+                        Text="CANCELAR"
+                        BackgroundColor="Red"
+                        HorizontalOptions="CenterAndExpand"
+                        Margin="20,0"/>
+                <Button BorderRadius="10"
+                        Text="GUARDAR"
+                        BackgroundColor="Green"
+                        HorizontalOptions="EndAndExpand"
+                        Margin="20,0"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
