@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="G1.View.MenuView"   
+             x:Name="MenuView"
+             BackgroundColor="{StaticResource Fondo}"
+             Title="Master">
+    <StackLayout>
+        <ListView x:Name="lstvMenu" 
+                      ItemsSource="{Binding lstMenu}" 
+                      BackgroundColor="White">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Descripcion}"
+                              TextColor="Black"                              
+                              Detail="{Binding Comentario}"
+                              DetailColor="CornflowerBlue"
+                              Command="{Binding Path=BindingContext.SeleccionaMenuCommand, Source={x:Reference MenuView}}" 
+                              CommandParameter="{Binding Id}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

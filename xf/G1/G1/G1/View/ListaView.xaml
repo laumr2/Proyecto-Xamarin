@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="G1.View.ListaView" 
+             x:Name="ListaView"
+             NavigationPage.HasNavigationBar="False" 
+             BackgroundColor="{StaticResource Fondo}">    
+    <ContentPage.Content>
+        <StackLayout>
+            <!--Lista con los articulos de la orden-->
+            <ListView x:Name="lstOrden" 
+                      ItemsSource="{Binding lstOrden}" 
+                      BackgroundColor="#84CDCA"
+                      Margin="10">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding CantidadArticulo}"
+                                  TextColor="White"
+                                  Detail="{Binding Descrip}"
+                                  DetailColor="Black"
+                                  Command="{Binding Path=BindingContext.DetalleSeleccionadoCommand, Source={x:Reference ListaView}}" 
+                                  CommandParameter="{Binding Articulo}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

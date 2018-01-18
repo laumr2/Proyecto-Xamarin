@@ -1,0 +1,7 @@
+Tareas Pendientes:
+
+1 - Importar proyecto Bernal (Consumir WCF, Recordar Usuario)
+2 - Proceso de buscar Imagenes
+3 - Modificar Lineas
+4 - Guardar Datos en BD
+5 - Cambio de nombre, iconos y colores

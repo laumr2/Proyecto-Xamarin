@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:circularButton="clr-namespace:ButtonCircle.FormsPlugin.Abstractions;assembly=ButtonCircle.FormsPlugin.Abstractions"
+             x:Class="G1.View.PopArticuloView"
+             x:Name="PopArticuloView"
+             BackgroundColor="{StaticResource Fondo}">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame Margin="10" 
+                   CornerRadius="10"
+                   HorizontalOptions="Center"
+                   VerticalOptions="FillAndExpand"
+                   BackgroundColor="WhiteSmoke">
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Consulta de Articulo" HorizontalOptions="Center" TextColor="Black" Font="20"/>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Entry Text="{Binding PopArticulo}" 
+                               TextColor="Black"
+                               Placeholder="Descripcion del articulo"
+                               PlaceholderColor="Black"
+                               BackgroundColor="#84CDCA"
+                               HorizontalOptions="FillAndExpand"/>
+                        <circularButton:CircleButton Text="+"
+                                                     FontSize="30" 
+                                                     TextColor="Black" 
+                                                     HeightRequest="60" 
+                                                     BorderRadius="60" 
+                                                     WidthRequest="60" 
+                                                     BorderThickness="5" 
+                                                     BorderColor="Black"
+                                                     BackgroundColor="#84CDCA"
+                                                     Command="{Binding ArticuloSeleccionadoCommand}"/>
+                    </StackLayout>
+                    <!--Lista con los articulos de la orden-->
+                    <ListView x:Name="lstArticulo" 
+                              ItemsSource="{Binding lstArticulo}" 
+                              BackgroundColor="#84CDCA">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextCell Text="{Binding CodArticulo}"
+                                          TextColor="White"
+                                          Detail="{Binding Descripcion}"
+                                          DetailColor="Black"
+                                          Command="{Binding Path=BindingContext.DetalleArticuloSeleccionadoCommand, Source={x:Reference PopArticuloView}}" 
+                                          CommandParameter="{Binding CodArticulo}"/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

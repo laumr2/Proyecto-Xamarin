@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:circularButton="clr-namespace:ButtonCircle.FormsPlugin.Abstractions;assembly=ButtonCircle.FormsPlugin.Abstractions"
+             NavigationPage.HasNavigationBar="False"
+             x:Name="FormularioView"
+             x:Class="G1.View.FormularioView"  
+             BackgroundColor="{StaticResource Fondo}">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="Center">
+            <!--Mesa-->
+            <StackLayout Orientation="Vertical">
+                <Label Text="{Binding Mesa}"
+                       TextColor="Black"
+                       HorizontalOptions="Center"
+                       FontSize="20"/>
+            </StackLayout>
+            <!--Cliente-Fecha-->
+            <StackLayout Orientation="Horizontal">
+                <Entry Text="{Binding NombreCliente}"
+                       TextColor="Black"
+                       Placeholder="Digite el nombre del cliente"
+                       PlaceholderColor="Black"
+                       BackgroundColor="#84CDCA"
+                       HorizontalOptions="Start"/>
+                <Label Text="{Binding Fecha}"
+                       TextColor="Black"
+                       HorizontalOptions="End"
+                       BackgroundColor="#84CDCA"
+                       FontSize="20"/>
+            </StackLayout>
+            <!--Cantidad-Articulo-Observaciones-->
+            <StackLayout Orientation="Horizontal">
+                <Entry Text="{Binding Cantidad}"
+                       TextColor="Black"
+                       Placeholder="Cant."
+                       PlaceholderColor="Black"
+                       Keyboard="Numeric"
+                       BackgroundColor="#84CDCA"/>
+                <Entry Text="{Binding Articulo}"
+                       TextColor="Black"
+                       Completed="EntryArticulo_Completed"
+                       Placeholder="Articulo"
+                       PlaceholderColor="Black"
+                       BackgroundColor="#84CDCA"
+                       WidthRequest="105"/>
+                <Entry Text="{Binding Observacion}"
+                       TextColor="Black"
+                       Placeholder="Observaciones"
+                       PlaceholderColor="Black"
+                       BackgroundColor="#84CDCA"
+                       HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            <!--Gravado-Descripcion-BotonAgregarLinea-->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Label Text ="{Binding Gravado}"
+                       TextColor="Black"
+                       WidthRequest="20"
+                       BackgroundColor="#84CDCA"/>
+                <Entry Text="{Binding Descripcion}" 
+                       TextColor="Black"
+                       Placeholder="Descripcion del articulo"
+                       PlaceholderColor="Black"
+                       BackgroundColor="#84CDCA"
+                       HorizontalOptions="FillAndExpand"
+                       IsEnabled="False"/>
+                <circularButton:CircleButton Text="+"
+                                             FontSize="30" 
+                                             TextColor="Black" 
+                                             HeightRequest="60" 
+                                             BorderRadius="60" 
+                                             WidthRequest="60" 
+                                             BorderThickness="5" 
+                                             BorderColor="Black"
+                                             BackgroundColor="#84CDCA"
+                                             Command="{Binding AgregaLineaCommand}"/>
+            </StackLayout>
+            <!--LineasAgregadas-->
+            <StackLayout Orientation="Horizontal">
+                <ListView x:Name="lstDetalle" 
+                          ItemsSource="{Binding lstDetalle}" 
+                          BackgroundColor="#84CDCA">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Path=BindingContext.OrdenSeleccionada, Source={x:Reference FormularioView}}" 
+                                                              CommandParameter="{Binding NroLinOrden}"/>
+                                    </StackLayout.GestureRecognizers>
+                                    <Label Text="{Binding Cantidad}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                    <Label Text="{Binding Articulo}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                    <Label Text="{Binding Descrip}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                    <Label Text="{Binding Observaciones}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <!--BotonSalir-BotonCancelar-BotonGuardar-->
+            <StackLayout Orientation="Horizontal">
+                <Button Command="{Binding SalirCommand}"
+                        BorderRadius="10"
+                        Text="SALIR"
+                        BackgroundColor="#84CDCA"
+                        HorizontalOptions="StartAndExpand"/>
+                <Button Command="{Binding Path=BindingContext.CancelarCommand, Source={x:Reference FormularioView}}" 
+                        CommandParameter="true"
+                        BorderRadius="10"
+                        Text="CANCELAR"
+                        BackgroundColor="#84CDCA"
+                        HorizontalOptions="CenterAndExpand"/>
+                <Button Command="{Binding GuardarCommand}"
+                        BorderRadius="10"
+                        Text="GUARDAR"
+                        BackgroundColor="#84CDCA"
+                        HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

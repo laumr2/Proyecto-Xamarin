@@ -1,2 +1,0 @@
-# ProyectoXamarin
-Proyecto Xamarin Cenfotec

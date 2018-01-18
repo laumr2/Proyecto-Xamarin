@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"   
+             xmlns:pages="clr-namespace:G1.View"
+             x:Class="G1.View.TabView">
+    <NavigationPage Title="Formulario" Icon="icon.png">
+        <x:Arguments>
+            <pages:FormularioView/>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Lista" Icon="icon.png">
+        <x:Arguments>
+            <pages:ListaView/>
+        </x:Arguments>
+    </NavigationPage>
+</TabbedPage>

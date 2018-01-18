@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="G1.View.LoginView"             
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource Fondo}">
+    <AbsoluteLayout>
+        <StackLayout x:Name="stkContainer" 
+                     HorizontalOptions="Center"
+                     AbsoluteLayout.LayoutBounds="0.0, 0.0, 1.0, 1.0"
+                     AbsoluteLayout.LayoutFlags="All">
+            <!--Frame-->
+            <Frame Padding="30" 
+                   CornerRadius="10"
+                   WidthRequest="250"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand"
+                   BackgroundColor="WhiteSmoke">
+                <StackLayout >
+                    <Label Text="Iniciar Sesion" HorizontalOptions="Center" TextColor="Black" Font="20"/>
+                    <!--Usuario-->
+                    <Label Text="Usuario" 
+                           TextColor="Black"/>
+                    <Entry Text="{Binding Usuario}" 
+                           TextColor="Black"
+                           Placeholder="Digite el usuario" />
+                    <!--Password-->
+                    <Label Text="Contraseña" 
+                           TextColor="Black"/>
+                    <Entry Text="{Binding Clave}" 
+                           Placeholder="Digite la contraseña" 
+                           TextColor="Black" 
+                           IsPassword="true"/>
+                    <!--BotonIngresar-->
+                    <Button Text="Ingresar" 
+                            Command="{Binding IngresarCommand}" 
+                            BackgroundColor="#C1BA51" 
+                            TextColor="Black" 
+                            HorizontalOptions="Center"/>
+                    <!--Switch-->
+                    <Label Text="Recordar usuario" 
+                           TextColor="Black" 
+                           Margin="0,5" 
+                           HorizontalOptions="Center"/>
+                    <Switch IsToggled="{Binding Check}"
+                            IsVisible="True" 
+                            BackgroundColor="Transparent" 
+                            HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </AbsoluteLayout>
+</ContentPage>

@@ -1,0 +1,11 @@
+Arnold:
+3 - Jalar informacion de la mesa
+
+Laura
+1 - Select Orden y Detalle
+
+Tareas Pendientes Proyecto:
+
+1 - Select Orden y Detalle
+2 - Pintar Mesas Usadas
+3 - Jalar informacion de la mesa

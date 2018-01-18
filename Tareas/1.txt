@@ -1,0 +1,28 @@
+Arnold:
+
+WCF - string validarUsuario(user, password)
+WCF - string obtenerOrden()
+WCF - bool guardarOrden(string pStrListaOrden)
+XF - (Modelo) - Inventa1
+
+Laura
+
+WCF - string ontenerArticulo()
+XF - (MODELO) - Usuario
+XF - (MODELO) - Orden/Detalle (Una misma clase)
+
+Actuales 12/01/2018
+
+PENDIENTES:
+WCF - bool guardarOrden(string pStrListaOrden)
+XF - (MODELO) - Inventa1
+
+Arnold:
+WCF - string validarUsuario(user, password)
+XF - (MODELO) - Usuario
+XF - (MODELO) - Orden/Detalle (Una misma clase)
+
+Laura:
+WCF - string obtenerOrden()
+WCF - string ontenerArticulo()
+
